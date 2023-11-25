@@ -19,6 +19,7 @@ public class Recette {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Le nom de la recette ne peut pas être vide.")
     private String nom;
 
     @OneToMany(cascade = CascadeType.ALL)
