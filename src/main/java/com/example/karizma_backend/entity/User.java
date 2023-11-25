@@ -1,6 +1,5 @@
 package com.example.karizma_backend.entity;
 
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -9,31 +8,18 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table
-public class Recette {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Le nom de la recette ne peut pas être vide.")
-    private String nom;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "recette_id")
-    private List<Ingredient> ingredients;
-
-
-
-    private int dureePreparation;
-
-    @ElementCollection
-    private List<String> etapesPreparation;
-
-    private String photoUrl;
+    private String username;
+    private String password;
 
 }
+

@@ -14,12 +14,12 @@ public class RecetteService {
     private RecetteRepository recetteRepository;
 
     public Recette createRecette(Recette recette) {
-        // Logique de validation si nécessaire
+
         return recetteRepository.save(recette);
     }
 
     public List<Recette> getAllRecettes() {
-        // Logique de récupération des recettes par utilisateur si nécessaire
+
         return recetteRepository.findAll();
     }
 
@@ -30,7 +30,7 @@ public class RecetteService {
     public Recette updateRecette(Long id, Recette updatedRecette) {
         Recette existingRecette = recetteRepository.findById(id).orElse(null);
         if (existingRecette != null) {
-            // Logique de mise à jour si nécessaire
+
             return recetteRepository.save(updatedRecette);
         } else {
             return null;
